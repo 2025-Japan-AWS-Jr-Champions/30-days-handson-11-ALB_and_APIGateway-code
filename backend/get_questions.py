@@ -24,7 +24,7 @@ def lambda_handler(event, context):
 
     # 5 問出題するので、問題数がそれに満たない場合はエラーを返します。
     if len(items) < 5:
-        return {"statusCode": 400, "body": json.dumps("Not enough questions")}
+        return {"statusCode": 500, "body": json.dumps("Not enough questions")}
 
     return {
         "statusCode": 200,
